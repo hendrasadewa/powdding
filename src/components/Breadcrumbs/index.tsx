@@ -22,7 +22,7 @@ function Breadcrumbs() {
 
   return (
     <BreadcrumbContainer>
-      <BreadcrumbItem href="/">Home</BreadcrumbItem>
+      <BreadcrumbItem href="/dashboard">Home</BreadcrumbItem>
       {breadcrumbs &&
         breadcrumbs.map((breadcrumb) => (
           <BreadcrumbItem key={breadcrumb.href} href={breadcrumb.href}>

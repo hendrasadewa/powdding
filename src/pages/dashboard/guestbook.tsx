@@ -8,11 +8,7 @@ function GuestbookPage() {
     return <div>not allowed...</div>;
   }
 
-  return (
-    <DrawerLayout>
-      Buku Tamu
-    </DrawerLayout>
-  );
+  return <DrawerLayout title="Kelola Buku Tamu">Buku Tamu</DrawerLayout>;
 }
 
 export default GuestbookPage;

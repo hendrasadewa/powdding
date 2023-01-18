@@ -8,11 +8,7 @@ function RSVPPage() {
     return <div>not allowed...</div>;
   }
 
-  return (
-    <DrawerLayout>
-      Reservasi
-    </DrawerLayout>
-  );
+  return <DrawerLayout title="Kelola Reservasi">Reservasi</DrawerLayout>;
 }
 
 export default RSVPPage;

@@ -9,7 +9,7 @@ function BridePage() {
   }
 
   return (
-    <DrawerLayout>
+    <DrawerLayout title="Kelola Informasi mempelai">
       Informasi mempelai
     </DrawerLayout>
   );

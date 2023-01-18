@@ -9,9 +9,7 @@ function EventPage() {
   }
 
   return (
-    <DrawerLayout>
-      Informasi Acara
-    </DrawerLayout>
+    <DrawerLayout title="Kelola Informasi Acara">Informasi Acara</DrawerLayout>
   );
 }
 

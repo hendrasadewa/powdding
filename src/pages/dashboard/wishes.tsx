@@ -9,7 +9,7 @@ function WishesPage() {
   }
 
   return (
-    <DrawerLayout>
+    <DrawerLayout title="Kelola Ucapan Pernikahan">
       Ucapan Pernikahan
     </DrawerLayout>
   );
