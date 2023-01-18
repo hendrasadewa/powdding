@@ -8,7 +8,7 @@ function SignOutPage() {
 
   useEffect(() => {
     supabase.auth.signOut().then(() => {
-      router.replace('/auth/signin');
+      router.replace('/auth/sign-in');
     });
   }, []);
 

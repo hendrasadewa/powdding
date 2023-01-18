@@ -11,7 +11,7 @@ interface Props {
 
 function MyApp({ Component, pageProps }: AppProps<Props>) {
   const [supabase] = useState(() => createBrowserSupabaseClient());
-
+  
   return (
     <SessionContextProvider
       supabaseClient={supabase}

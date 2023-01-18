@@ -4,6 +4,7 @@ import { useState } from 'react';
 import AuthTemplate from '@/components/Auth/AuthTemplate';
 import CredentialForm from '@/components/Auth/CredentialInputForm';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import { useRouter } from 'next/router';
 
 function SignIn() {
   const supabase = useSupabaseClient();
@@ -20,7 +21,6 @@ function SignIn() {
       if (result.error) {
         throw result.error;
       }
-      console.log(result.data);
     } catch (error) {
       if (error instanceof AuthApiError) {
         alert(error.message);

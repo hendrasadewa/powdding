@@ -1,7 +1,7 @@
 import DrawerLayout from '@/components/Dashboard';
 import { useUser } from '@supabase/auth-helpers-react';
 
-function DashboardHomePage() {
+function EventPage() {
   const user = useUser();
 
   if (!user) {
@@ -10,9 +10,9 @@ function DashboardHomePage() {
 
   return (
     <DrawerLayout>
-      Home
+      Informasi Acara
     </DrawerLayout>
   );
 }
 
-export default DashboardHomePage;
+export default EventPage;
