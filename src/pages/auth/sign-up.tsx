@@ -4,6 +4,7 @@ import { useState } from 'react';
 import AuthTemplate from '@/components/Auth/AuthTemplate';
 import CredentialForm from '@/components/Auth/CredentialInputForm';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import Link from 'next/link';
 
 function SignUp() {
   const supabase = useSupabaseClient();
@@ -52,6 +53,7 @@ function SignUp() {
   return (
     <AuthTemplate title="Sign Up" subtitle="Register to enjoy our services">
       <CredentialForm isSubmitting={isSubmitting} onSubmit={handleSubmit} />
+      <Link href="/auth/sign-in">Sudah punya akun?</Link>
     </AuthTemplate>
   );
 }
