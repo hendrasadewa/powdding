@@ -1,6 +1,6 @@
-import DrawerLayout from '@/components/Dashboard';
-import ProfileForm from '@/components/Profile/ProfileForm';
-import { ProfileFormPayload } from '@/components/Profile/types';
+import DrawerLayout from '@/components/features/Dashboard';
+import ProfileForm from '@/components/features/Profile/ProfileForm';
+import { ProfileFormPayload } from '@/components/features/Profile/types';
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 import { AuthApiError } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';

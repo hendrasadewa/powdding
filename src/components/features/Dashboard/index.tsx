@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { ReactNode } from 'react';
 
-import Breadcrumbs from '../Breadcrumbs';
+import Breadcrumbs from '../../global/Breadcrumbs';
 
 import Navbar from './Navbar';
 import { DRAWER_ID, MENU } from './constants';

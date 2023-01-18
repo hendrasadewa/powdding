@@ -1,8 +1,8 @@
 import { AuthApiError } from '@supabase/supabase-js';
 import { useState } from 'react';
 
-import AuthTemplate from '@/components/Auth/AuthTemplate';
-import CredentialForm from '@/components/Auth/CredentialInputForm';
+import AuthTemplate from '@/components/features/Auth/AuthTemplate';
+import CredentialForm from '@/components/features/Auth/CredentialInputForm';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import Link from 'next/link';
 

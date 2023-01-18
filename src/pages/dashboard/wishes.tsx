@@ -1,4 +1,4 @@
-import DrawerLayout from '@/components/Dashboard';
+import DrawerLayout from '@/components/features/Dashboard';
 import { useUser } from '@supabase/auth-helpers-react';
 
 function WishesPage() {
