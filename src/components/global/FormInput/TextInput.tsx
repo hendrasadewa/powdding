@@ -17,7 +17,7 @@ interface Props {
     borderOffset: boolean;
     className: string;
     onChange: VoidFunction,
-  }
+}
 
 
 const TextInput = ({
@@ -35,7 +35,7 @@ const TextInput = ({
     className,
     onChange,
 }: Props) => (
-    <div style={{ display: "block", marginTop: 16}}>
+    <div style={{ display: "flex", flexDirection: 'column', marginTop: 16, marginLeft: 16, marginRight: 16 }}>
         <label htmlFor={`input-${name}`}>{label}</label>
         <Input
             id={`input-${name}`}
@@ -45,15 +45,15 @@ const TextInput = ({
             placeholder={placeholder || 'Silahkan diisi'}
             onChange={onChange}
             size={size}
-            width={'10rem'}
             value={value}
             disabled={disabled}
             bordered={bordered || true}
             borderOffset={borderOffset}
-            className={className || 'w-full max-w-xs'}
+            className={className}
+            style={{ marginTop: 5 }}
         />
         {errorMessage && (
-            <span style={{color: 'red', fontSize: '14px'}}>{errorMessage}</span>
+            <p style={{ color: 'red', fontSize: '14px' }}>{errorMessage}</p>
         )}
     </div>
 );

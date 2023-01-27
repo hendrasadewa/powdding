@@ -17,7 +17,7 @@ function BridePage() {
     },
   });
 
-  const [errorMessage, setErrorMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState<any[]>([]);
 
   if (!user) {
     return <div>not allowed...</div>;
@@ -32,11 +32,11 @@ function BridePage() {
 
   return (
     <DrawerLayout title="Kelola Informasi mempelai">
-      <div style={{ display: "flex", overflowY: "scroll", height: "85vh" }}>
+      <div style={{ display: "flex", flexDirection: 'column', overflowY: "scroll", height: "85vh" }}>
         {!!CoupleInput?.length ? (
-          <form onSubmit={handleSubmit(onSubmit, onError)}>
+          <form style={{ display: 'flex', flexDirection: 'column', width: '100%' }} onSubmit={handleSubmit(onSubmit, onError)}>
             {CoupleInput.map((form: any) => (
-              <div style={{ display: 'block', marginTop: 5 }} key={form.label}>
+              <div style={{ display: 'flex', flexDirection: 'column', width: '100%', marginTop: 5 }} key={form.label}>
                 <Controller
                   key={form.name}
                   name={form.name}
@@ -51,16 +51,16 @@ function BridePage() {
                       placeholder={form?.placeholder}
                       items={form?.option}
                       direction="row"
-
+                      errorMessage={
+												errorMessage?.[form.name]?.message
+											}
                     />
                   )}
                 />
               </div>
             ))}
-            <div style={{ flexDirection: "row", marginTop: 16, justifyContent: "flex-end" }}>
+            <div style={{ flexDirection: "row", marginTop: 16, marginLeft: 16, justifyContent: "flex-end" }}>
               <Button
-                size="sm"
-                variant='outline'
                 onClick={() => router.back()}
               >
                 Back
