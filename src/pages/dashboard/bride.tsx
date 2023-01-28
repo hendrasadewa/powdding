@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import DrawerLayout from '@/components/features/Dashboard';
 import { useUser } from '@supabase/auth-helpers-react';
 import { useForm, Controller } from 'react-hook-form';
-import CoupleInput from '@/config/coupleInput';
-import FormRender from '@/components/global/FormRender';
-import { Button } from 'react-daisyui';
+import { Avatar, Button, Card } from 'react-daisyui';
+import { IoMale, IoFemale, IoPencil } from "react-icons/io5";
+
 
 function BridePage() {
   const router = useRouter();
@@ -17,12 +17,17 @@ function BridePage() {
     },
   });
 
+  const [visible, setVisible] = useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState<any[]>([]);
 
   if (!user) {
     return <div>not allowed...</div>;
   }
 
+  const toggleVisible = () => {
+    setVisible(!visible)
+  }
+  
   const onSubmit = (data: any) => {
     console.log(data)
   };
@@ -32,49 +37,43 @@ function BridePage() {
 
   return (
     <DrawerLayout title="Kelola Informasi mempelai">
-      <div style={{ display: "flex", flexDirection: 'column', overflowY: "scroll", height: "85vh" }}>
-        {!!CoupleInput?.length ? (
-          <form style={{ display: 'flex', flexDirection: 'column', width: '100%' }} onSubmit={handleSubmit(onSubmit, onError)}>
-            {CoupleInput.map((form: any) => (
-              <div style={{ display: 'flex', flexDirection: 'column', width: '100%', marginTop: 5 }} key={form.label}>
-                <Controller
-                  key={form.name}
-                  name={form.name}
-                  control={control}
-                  rules={{ required: form?.required ? `${form.label} wajib diisi !` : false }}
-                  render={({ field }: any) => (
-                    <FormRender
-                      {...field}
-                      type={form?.type}
-                      label={form?.label}
-                      name={form?.name}
-                      placeholder={form?.placeholder}
-                      items={form?.option}
-                      direction="row"
-                      errorMessage={
-												errorMessage?.[form.name]?.message
-											}
-                    />
-                  )}
-                />
-              </div>
-            ))}
-            <div style={{ flexDirection: "row", marginTop: 16, marginLeft: 16, justifyContent: "flex-end" }}>
-              <Button
-                onClick={() => router.back()}
-              >
-                Back
-              </Button>
-              <Button
-                style={{ marginLeft: 16 }}
-                size="sm"
-                type="submit"
-              >
-                Submit
-              </Button>
+      <div className='flex flex-row justify-center mt-10'>
+        <Card className="flex flex-col justify-center align-middle  w-1/3 max-w-240 rounded overflow-hidden shadow-lg" >
+          <Avatar
+            src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+            shape='circle'
+            size='lg'
+            className='justify-center'
+          />
+          <Card.Body className="items-center text-center">
+            <Card.Title tag="h2" className='mt-10 font-bold text-ellipsis'>Name</Card.Title>
+            <div className='flex flex-row justify-center'>
+              <IoMale className='text-center mt-3'size={22}/>
             </div>
-          </form>
-        ) : null}
+            <p className="text-gray-700 text-base mt-3">Calon Mempelai Pria</p>
+            <Card.Actions className="justify-end mt-3">
+              <Button onClick={toggleVisible} startIcon={<IoPencil/>} size='xs'>Edit</Button>
+            </Card.Actions>
+          </Card.Body>
+        </Card>
+        <Card className="flex flex-col p-16 ml-16 justify-center align-middle w-1/3 max-w-240 rounded overflow-hidden shadow-lg">
+          <Avatar
+            src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"
+            shape='circle'
+            size='lg'
+            className='justify-center'
+          />
+          <Card.Body className="items-center text-center">
+            <Card.Title tag="h2" className='mt-10 font-bold text-ellipsis'>Name</Card.Title>
+            <div className='flex flex-row justify-center'>
+              <IoFemale className='text-center mt-3'size={22}/>
+            </div>
+            <p className="text-gray-700 text-base mt-3">Calon Mempelai Wanita</p>
+            <Card.Actions className="justify-end mt-3">
+              <Button onClick={toggleVisible} startIcon={<IoPencil/>} size='xs'>Edit</Button>
+            </Card.Actions>
+          </Card.Body>
+        </Card>
       </div>
     </DrawerLayout>
   );
