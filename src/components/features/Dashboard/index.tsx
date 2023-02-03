@@ -27,7 +27,7 @@ function DrawerLayout({ children, title = 'dashboard' }: Props) {
           </div>
           <div className="flex items-start">
             <div className="w-full px-8 py-4 max-h-screen h-screen">
-              <div className="bg-base-100 flex flex-col h-full rounded-lg p-4">
+              <div className="bg-base-100 flex flex-col h-full rounded-lg p-4 overflow-hidden">
                 <Breadcrumbs />
                 <header className="py-4">
                   <h1 className="text-xl font-bold">{title}</h1>
