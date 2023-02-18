@@ -27,7 +27,7 @@ function ProfilePage() {
     if (user?.id) {
       getProfileById();
     }
-  }, [user]);
+  }, [user, supabase]);
 
   if (!user) {
     return <div>not allowed...</div>;

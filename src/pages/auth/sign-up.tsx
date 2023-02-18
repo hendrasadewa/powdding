@@ -26,7 +26,6 @@ function SignUp() {
         .from('role')
         .select('id')
         .eq('name', 'CUSTOMER')
-        .limit(1)
         .single();
 
       if (roleQuery.error) {
@@ -35,9 +34,9 @@ function SignUp() {
 
       // assign user role
       await supabase
-        .from('userRole')
-        .upsert({ userId: result.data.user.id, roleId: roleQuery.data.id });
-      
+        .from('user_role')
+        .upsert({ user_id: result.data.user.id, role_id: roleQuery.data.id });
+
       // prefill user profile
       await supabase.from('profile').insert({ id: result.data.user.id });
     } catch (error) {
