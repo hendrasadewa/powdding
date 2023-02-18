@@ -421,22 +421,16 @@ export interface Database {
         Row: {
           created_at: string | null
           id: string
-          media_source_id: string | null
-          media_type_id: string | null
           url: string | null
         }
         Insert: {
           created_at?: string | null
           id?: string
-          media_source_id?: string | null
-          media_type_id?: string | null
           url?: string | null
         }
         Update: {
           created_at?: string | null
           id?: string
-          media_source_id?: string | null
-          media_type_id?: string | null
           url?: string | null
         }
       }
