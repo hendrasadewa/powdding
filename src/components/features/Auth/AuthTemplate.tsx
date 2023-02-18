@@ -17,7 +17,7 @@ function AuthTemplate({ children, title, subtitle }: Props) {
     if (session) {
       router.replace('/dashboard');
     }
-  }, [session])
+  }, [session]);
 
   return (
     <>

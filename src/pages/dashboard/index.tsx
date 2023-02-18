@@ -8,7 +8,7 @@ function DashboardHomePage() {
     return <div>not allowed...</div>;
   }
 
-  return <DrawerLayout title="Home">Home</DrawerLayout>;
+  return <DrawerLayout title="Home">hello</DrawerLayout>;
 }
 
 export default DashboardHomePage;
