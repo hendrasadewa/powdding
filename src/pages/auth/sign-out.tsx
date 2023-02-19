@@ -10,7 +10,7 @@ function SignOutPage() {
     supabase.auth.signOut().then(() => {
       router.replace('/auth/sign-in');
     });
-  }, []);
+  }, [supabase, router]);
 
   return <div>sign out...</div>;
 }

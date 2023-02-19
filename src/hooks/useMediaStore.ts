@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 
-import { insertMedia } from '@/lib/models/MediaModel';
 import supabase from '@/lib/supabase';
 import type { Database } from '@/lib/supabase/types';
 import { createFilename, createUploadPath } from '@/lib/utils/file';
@@ -60,9 +59,11 @@ export const useMediaStore = create<UploadStore>()((set) => ({
       data: { publicUrl },
     } = supabase.storage.from(bucket).getPublicUrl(data.path);
 
-    const { data: insertedMedia, error: insertError } = await insertMedia(
-      publicUrl
-    );
+    const { data: insertedMedia, error: insertError } = await supabase
+      .from('media')
+      .insert({ url: publicUrl })
+      .select('*')
+      .maybeSingle();
 
     if (insertError) {
       set({ error: insertError, isUploading: false });

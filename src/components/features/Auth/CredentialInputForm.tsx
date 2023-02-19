@@ -22,7 +22,7 @@ function CredentialForm({ isSubmitting, onSubmit }: Props) {
   };
 
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-4 py-2" onSubmit={handleSubmit}>
       <div className="form-control w-full">
         <label className="label">
           <span className="label-text">Email</span>
