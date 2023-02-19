@@ -1,5 +1,4 @@
 import { v4 } from 'uuid';
-import { FileData, UploadState } from '../storage/types';
 
 export function humanizeFileSize(size: number) {
   if (size < 1024) {
@@ -28,32 +27,6 @@ export function createFilename(file: File) {
 
 export function createUploadPath(filename: string, mediaType: string) {
   return `${mediaType}/${filename}`;
-}
-
-export function composeFileData(files: File[], mediaType: string) {
-  return files.map<FileData>((file) => {
-    const name = createFilename(file);
-
-    return {
-      info: {
-        previewURL: URL.createObjectURL(file),
-        extension: getFileExtension(file),
-        uploadPath: createUploadPath(name, mediaType),
-        humanFileSize: humanizeFileSize(file.size),
-        name,
-      },
-      file,
-    };
-  });
-}
-
-export function composeUploadState(fileList: FileData[]) {
-  return fileList.map<UploadState>((data) => ({
-    error: undefined,
-    fileData: data,
-    isCompleted: false,
-    isUploading: false,
-  }));
 }
 
 // validators
