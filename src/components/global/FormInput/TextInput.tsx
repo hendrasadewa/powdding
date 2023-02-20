@@ -35,8 +35,8 @@ const TextInput = ({
     className,
     onChange,
 }: Props) => (
-    <div style={{ display: "flex", flexDirection: 'column', marginTop: 16, marginLeft: 16, marginRight: 16 }}>
-        <label htmlFor={`input-${name}`}>{label}</label>
+    <div className='flex flex-col mt-3 mx-2'>
+        <label className=' font-     ' htmlFor={`input-${name}`}>{label}</label>
         <Input
             id={`input-${name}`}
             name={name}
@@ -50,7 +50,6 @@ const TextInput = ({
             bordered={bordered || true}
             borderOffset={borderOffset}
             className={className}
-            style={{ marginTop: 5 }}
         />
         {errorMessage && (
             <p style={{ color: 'red', fontSize: '14px' }}>{errorMessage}</p>

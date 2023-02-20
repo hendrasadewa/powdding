@@ -7,7 +7,6 @@ import { Avatar, Button, Card } from 'react-daisyui';
 import { IoMale, IoFemale, IoPencil } from "react-icons/io5";
 import CoupleInput from '@/config/coupleInput';
 import ModalEditCouple from '@/components/features/Dashboard/Bride/ModalEditCouple';
-import { Modal } from 'react-daisyui';
 
 
 function BridePage() {
@@ -80,7 +79,7 @@ function BridePage() {
             </div>
             <p className="text-gray-700 text-base mt-3">Calon Mempelai Wanita</p>
             <Card.Actions className="justify-end mt-5">
-              <Button onClick={() => onClickEdit('female')} startIcon={<IoPencil/>} size='xs'>Edit</Button>
+              <Button onClick={() => onClickEdit('female')} startIcon={<IoPencil/>}  size='xs'>Edit</Button>
             </Card.Actions>
           </Card.Body>
         </Card>
