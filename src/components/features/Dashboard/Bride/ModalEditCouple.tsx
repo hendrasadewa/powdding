@@ -62,8 +62,8 @@ const ModalEditCouple = ({ control, gender, visible, coupleInput, errorMessage, 
         ) : null}
       </div>
       <div className='flex flex-row justify-end align-middle mt-8'>
-      <button className='btn mr-4 text-xs capitalize btn-outline py-2 px-8' onClick={toggleVisible}>Batal</button>
-      <button className='btn text-xs capitalize px-8'>Simpan</button>
+      <button className='btn mr-4 text-xs capitalize btn-outline py-2 px-8 min-h-8 h-10' onClick={toggleVisible}>Batal</button>
+      <button className='btn text-xs capitalize px-8 min-h-8 h-10'>Simpan</button>
       </div>
     </Modal>
   );

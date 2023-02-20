@@ -61,7 +61,7 @@ function BridePage() {
             </div>
             <p className="text-gray-700 text-base mt-3">Calon Mempelai Pria</p>
             <Card.Actions className="justify-end mt-5">
-              <Button onClick={() => onClickEdit('male')} startIcon={<IoPencil/>} size='xs'>Edit</Button>
+              <Button className="text-xs uppercase px-4 min-h-8 h-10" onClick={() => onClickEdit('male')} startIcon={<IoPencil/>} size='xs'>Edit</Button>
             </Card.Actions>
           </Card.Body>
         </Card>
@@ -79,7 +79,7 @@ function BridePage() {
             </div>
             <p className="text-gray-700 text-base mt-3">Calon Mempelai Wanita</p>
             <Card.Actions className="justify-end mt-5">
-              <Button onClick={() => onClickEdit('female')} startIcon={<IoPencil/>}  size='xs'>Edit</Button>
+              <Button className="text-xs uppercase px-4 min-h-8 h-10" onClick={() => onClickEdit('female')} startIcon={<IoPencil/>}  size='xs'>Edit</Button>
             </Card.Actions>
           </Card.Body>
         </Card>
