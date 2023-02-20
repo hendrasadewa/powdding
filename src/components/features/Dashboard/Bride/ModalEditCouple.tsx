@@ -20,7 +20,6 @@ const ModalEditCouple = ({ control, gender, visible, coupleInput, errorMessage, 
     <Modal 
       isOpen={visible}
       onRequestClose={toggleVisible}
-      // style={customStyles}
       className="content top-1/2 left-1/2 right-auto bottom-auto -mr-1/2 translate-x-2/3 translate-y-20 w-1/2 h-3/4 overflow-y-scroll bg-white border-transparent rounded-lg  py-4 px-4 shadow-lg"
     >
       <div className="flex flex-row font-bold justify-between pl-4" >
@@ -68,20 +67,5 @@ const ModalEditCouple = ({ control, gender, visible, coupleInput, errorMessage, 
     </Modal>
   );
 }
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right:'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '60%',
-    height: '80%',
-    borderRadius: 8,
-    padding: 16,
-  },
-};
 
 export default ModalEditCouple;
