@@ -1,10 +1,14 @@
 import React, { createRef } from 'react';
-import { TextInput } from '../FormInput';
+import { TextInput, SingleImageInput } from '../FormInput';
 
 const templates = [
 	{
 		key: 'textInput',
 		children: TextInput,
+	},
+	{
+		key: 'singleImageInput',
+		children: SingleImageInput,
 	},
 ];
 

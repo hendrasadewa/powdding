@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import DrawerLayout from '@/components/features/Dashboard';
+import dynamic from 'next/dynamic';
 import { useUser } from '@supabase/auth-helpers-react';
 import { useForm, Controller } from 'react-hook-form';
 import { Avatar, Button, Card } from 'react-daisyui';
 import { IoMale, IoFemale, IoPencil } from "react-icons/io5";
 import CoupleInput from '@/config/coupleInput';
-import ModalEditCouple from '@/components/features/Dashboard/Bride/ModalEditCouple';
+
+const ModalEditCouple = dynamic(() => import('@/components/features/Dashboard/Bride/ModalEditCouple'));
 
 
 function BridePage() {
   const router = useRouter();
   const user = useUser();
-  const { handleSubmit, control } = useForm({
+  const { handleSubmit, control, setValue } = useForm({
     defaultValues: {
-      man_name: '',
-      woman_name: '',
+      fullname: '',
+      nickname: '',
+      father_name: '',
+      mother_name: '',
+      other_information: '',
+      ig_username: '',
+      profile_pict: '',
     },
   });
 
@@ -86,6 +93,7 @@ function BridePage() {
       </div>
       <ModalEditCouple
         control={control}
+        setValue={setValue}
         gender={gender}
         visible={visible}
         coupleInput={CoupleInput}

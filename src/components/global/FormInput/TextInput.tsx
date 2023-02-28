@@ -17,6 +17,7 @@ interface Props {
     borderOffset: boolean;
     className: string;
     onChange: VoidFunction,
+    required: boolean,
 }
 
 
@@ -34,22 +35,26 @@ const TextInput = ({
     borderOffset,
     className,
     onChange,
+    required
 }: Props) => (
     <div className='flex flex-col mt-3 mx-2'>
-        <label className=' font-     ' htmlFor={`input-${name}`}>{label}</label>
+        <label htmlFor={`input-${name}`} className='mb-2'>
+            {label}
+            {required && <sup className='text-red-400'>*</sup>}
+        </label>
         <Input
             id={`input-${name}`}
             name={name}
-            color={color}
+            color="primary"
             dataTheme={dataTheme}
             placeholder={placeholder || 'Silahkan diisi'}
             onChange={onChange}
             size={size}
             value={value}
             disabled={disabled}
-            bordered={bordered || true}
-            borderOffset={borderOffset}
-            className={className}
+            bordered={false}
+            borderOffset={false}
+            className={className || "border-0 active:border-0 h-10"}
         />
         {errorMessage && (
             <p style={{ color: 'red', fontSize: '14px' }}>{errorMessage}</p>

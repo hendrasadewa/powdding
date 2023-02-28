@@ -1,4 +1,5 @@
 import TextInput from "./TextInput";
+import SingleImageInput from "./SingleImageInput";
 
 
-export { TextInput }
+export { TextInput, SingleImageInput }
