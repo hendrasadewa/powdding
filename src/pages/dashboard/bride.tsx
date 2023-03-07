@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
 import DrawerLayout from '@/components/features/Dashboard';
 import dynamic from 'next/dynamic';
 import { useUser } from '@supabase/auth-helpers-react';
@@ -12,7 +11,6 @@ const ModalEditCouple = dynamic(() => import('@/components/features/Dashboard/Br
 
 
 function BridePage() {
-  const router = useRouter();
   const user = useUser();
   const { handleSubmit, control, setValue } = useForm({
     defaultValues: {

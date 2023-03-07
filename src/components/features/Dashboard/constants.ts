@@ -5,7 +5,16 @@ export interface MenuItem {
   href: string;
 }
 
+export interface OptionItem {
+  label: string;
+  value: string;
+}
+
 export const MENU: MenuItem[] = [
+  {
+    label: 'Informasi Cover',
+    href: '/dashboard/cover',
+  },
   {
     label: 'Informasi Mempelai',
     href: '/dashboard/bride',
@@ -38,3 +47,15 @@ export const USER_MENU: MenuItem[] = [
     href: '/auth/sign-out',
   },
 ];
+
+export const EVENT_OPTION_DEFAULT: OptionItem[] = [
+  {
+    label: 'Akad Nikah',
+    value: 'akad_nikah',
+  },
+  {
+    label: 'Resepsi',
+    value: 'resepsi',
+  },
+];
+

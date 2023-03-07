@@ -33,7 +33,7 @@ const SingleImageInput = ({
             await setValue(name, event.target.files[0]);
             reader.readAsDataURL(event.target.files[0]);
             reader.onload = () => {
-                setImagePreview(reader?.result);
+                reader?.result && setImagePreview(reader?.result);
             };
         }
     };

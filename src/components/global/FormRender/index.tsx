@@ -1,5 +1,5 @@
 import React, { createRef } from 'react';
-import { TextInput, SingleImageInput } from '../FormInput';
+import { TextInput, SingleImageInput, FormSelect } from '../FormInput';
 
 const templates = [
 	{
@@ -10,15 +10,19 @@ const templates = [
 		key: 'singleImageInput',
 		children: SingleImageInput,
 	},
+  {
+		key: 'select',
+		children: FormSelect,
+	},
 ];
 
 export default function FormRender(props: any) {
-	const type = props.type || 'input';
+	const formType = props.formType || 'textInput';
 	const ref = createRef();
 	return (
 		<>
 			{
-				templates.filter((template) => template.key === type).map((component) => (
+				templates.filter((template) => template.key === formType).map((component) => (
 					<component.children key={component.key} {...props} ref={ref} />
 				))
 			}

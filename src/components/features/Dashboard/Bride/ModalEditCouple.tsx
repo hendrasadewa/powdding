@@ -44,7 +44,7 @@ const ModalEditCouple = ({ control, gender, visible, coupleInput, errorMessage, 
                   render={({ field }) => (
                     <FormRender
                       {...field}
-                      type={form?.type}
+                      formType={form?.formType}
                       label={form?.label}
                       name={form?.name}
                       placeholder={form?.placeholder}
