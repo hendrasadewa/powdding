@@ -15,10 +15,7 @@ function CoverPage() {
       display_name_male: '',
       display_name_female: '',
       display_event_date: '',
-      mother_name: '',
-      other_information: '',
-      ig_username: '',
-      profile_pict: '',
+      cover_pict: '',
     },
   });
 
@@ -47,8 +44,8 @@ function CoverPage() {
 
   return (
     <DrawerLayout title="Kelola Informasi Cover">
-    <div className='flex flex-col lg:flex-row flex-start mt-8'>
-    <div className='flex flex-col overscroll-contain overflow-y-scroll mt-3 w-full'>
+    <div className='flex flex-col flex-start mt-4 overflow-hidden overscroll-contain overflow-y-scroll pb-4 h-full'>
+    <div className='flex flex-col flex-start overscroll-contain overflow-y-scroll w-full pb-8 h-full'>
         {!!CoverInput.length ? (
           <form onSubmit={handleSubmit(onSubmit, onError)}>
             {CoverInput.map((form: any) => {

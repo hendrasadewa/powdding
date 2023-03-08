@@ -31,8 +31,6 @@ const TextInput = ({
     disabled,
     errorMessage,
     dataTheme,
-    bordered,
-    borderOffset,
     className,
     onChange,
     required
@@ -45,7 +43,7 @@ const TextInput = ({
         <Input
             id={`input-${name}`}
             name={name}
-            color="primary"
+            color={color || "primary"}
             dataTheme={dataTheme}
             placeholder={placeholder || 'Silahkan diisi'}
             onChange={onChange}
