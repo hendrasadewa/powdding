@@ -44,8 +44,8 @@ function CoverPage() {
 
   return (
     <DrawerLayout title="Kelola Informasi Cover">
-    <div className='flex flex-col flex-start mt-4 overflow-hidden overscroll-contain overflow-y-scroll pb-4 h-full'>
-    <div className='flex flex-col flex-start overscroll-contain overflow-y-scroll w-full pb-8 h-full'>
+    <div className='flex flex-col flex-start mt-4 overflow-hidden overscroll-contain overflow-y-scroll h-full'>
+    <div className='flex flex-col flex-start overscroll-contain overflow-y-scroll w-full h-full'>
         {!!CoverInput.length ? (
           <form onSubmit={handleSubmit(onSubmit, onError)}>
             {CoverInput.map((form: any) => {
