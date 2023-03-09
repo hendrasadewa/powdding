@@ -59,3 +59,18 @@ export const EVENT_OPTION_DEFAULT: OptionItem[] = [
   },
 ];
 
+export const ZONE_TIME: OptionItem[] = [
+  {
+    label: 'WIB',
+    value: 'wib',
+  },
+  {
+    label: 'WITA',
+    value: 'wita',
+  },
+  {
+    label: 'WIT',
+    value: 'wit',
+  },
+];
+

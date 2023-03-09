@@ -18,6 +18,7 @@ const EventInput = [
       label: "Jam Mulai",
       placeholder: "Pilih jam mulai acara",
       formType: "date",
+      type: "time",
       required: true,
     },
     {
@@ -25,20 +26,14 @@ const EventInput = [
       label: "Jam Selesai",
       placeholder: "Pilih jam selesai acara",
       formType: "date",
+      type: "time",
       required: true,
     },
     {
       name: "is_untill_finish",
-      label: "",
+      label: "Sampai Selesai",
       placeholder: "",
-      formType: "date",
-      required: false,
-    },
-    {
-      name: "zone_time",
-      label: "Zona Waktu",
-      placeholder: "Pilih zona waktu",
-      formType: "select",
+      formType: "checkbox",
       required: false,
     },
     {
@@ -73,14 +68,14 @@ const EventInput = [
       name: "is_main_event",
       label: "Jadikan Acara Utama",
       placeholder: "",
-      formType: "textInput",
+      formType: "checkbox",
       required: false,
     },
     {
       name: "is_hidden_event",
       label: "Sembuntikan Acara",
       placeholder: "",
-      formType: "textInput",
+      formType: "checkbox",
       required: false,
     },
   ];

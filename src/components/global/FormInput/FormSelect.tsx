@@ -44,6 +44,7 @@ const FormSelect = ({
       size={size}
       value={value}
       disabled={disabled}
+      className="border-0 active:border-0 h-10"
     >
       {!!items && !!items.length && items?.map((item : any) => (
         <Select.Option key={item?.label} value={item?.value}>{item?.label}</Select.Option>
