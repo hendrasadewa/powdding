@@ -11,6 +11,7 @@ interface Props {
   errorMessage: string;
   onChange: VoidFunction,
   required: boolean,
+  type: string
 }
 
 
@@ -23,6 +24,7 @@ const SingleDatePicker = ({
   disabled,
   placeholder,
   errorMessage,
+  type,
 }: Props) => (
   <div className='flex flex-col mt-3 mx-2'>
     <label htmlFor={`input-${name}`}>
@@ -30,11 +32,17 @@ const SingleDatePicker = ({
       {required && <sup style={{ color: 'red' }}>*</sup>}
     </label>
     <DatePicker 
-      className='block w-full border-solid border-1 h-10 rounded-lg p-4 hover:cursor-pointe' 
+      className='block w-full border-solid border-1 h-10 rounded-lg p-4 hover:cursor-pointer' 
       selected={value} 
       onChange={onChange} 
       disabled={disabled} 
-      placeholderText={placeholder} />
+      placeholderText={placeholder} 
+      showTimeSelect={type === 'time' ? true : false} 
+      showTimeSelectOnly={type === 'time' ? true : false}
+      timeIntervals={type === 'time' ? 15 : undefined}
+      timeCaption={type === 'time' ? "Time" : undefined}
+      dateFormat={type === 'time' ? "HH:mm" : undefined}
+    />
     {errorMessage && (
       <p style={{ color: 'red', fontSize: '14px' }}>{errorMessage}</p>
     )}
