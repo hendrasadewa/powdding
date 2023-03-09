@@ -1,5 +1,5 @@
 import React, { createRef } from 'react';
-import { TextInput, SingleImageInput, FormSelect, SingleDatePicker } from '../FormInput';
+import { TextInput, SingleImageInput, FormSelect, SingleDatePicker, FormCheckbox } from '../FormInput';
 
 const templates = [
   {
@@ -17,6 +17,10 @@ const templates = [
   {
 		key: 'date',
 		children: SingleDatePicker,
+	},
+  {
+		key: 'checkbox',
+		children: FormCheckbox,
 	},
 ];
 
