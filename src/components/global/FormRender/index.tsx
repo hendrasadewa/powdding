@@ -1,5 +1,5 @@
 import React, { createRef } from 'react';
-import { TextInput, SingleImageInput, FormSelect, SingleDatePicker, FormCheckbox } from '../FormInput';
+import { TextInput, SingleImageInput, FormSelect, SingleDatePicker, FormCheckbox, FormToggle } from '../FormInput';
 
 const templates = [
   {
@@ -15,13 +15,17 @@ const templates = [
     children: FormSelect,
   },
   {
-		key: 'date',
-		children: SingleDatePicker,
-	},
+    key: 'date',
+    children: SingleDatePicker,
+  },
   {
-		key: 'checkbox',
-		children: FormCheckbox,
-	},
+    key: 'checkbox',
+    children: FormCheckbox,
+  },
+  {
+    key: 'toggle',
+    children: FormToggle,
+  },
 ];
 
 export default function FormRender(props: any) {

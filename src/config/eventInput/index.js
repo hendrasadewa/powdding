@@ -68,14 +68,14 @@ const EventInput = [
       name: "is_main_event",
       label: "Jadikan Acara Utama",
       placeholder: "",
-      formType: "checkbox",
+      formType: "toggle",
       required: false,
     },
     {
       name: "is_hidden_event",
       label: "Sembuntikan Acara",
       placeholder: "",
-      formType: "checkbox",
+      formType: "toggle",
       required: false,
     },
   ];
