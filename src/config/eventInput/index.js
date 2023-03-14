@@ -73,7 +73,7 @@ const EventInput = [
     },
     {
       name: "is_hidden_event",
-      label: "Sembuntikan Acara",
+      label: "Sembunyikan Acara",
       placeholder: "",
       formType: "toggle",
       required: false,

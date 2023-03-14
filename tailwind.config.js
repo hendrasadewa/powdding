@@ -20,6 +20,13 @@ module.exports = {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
+    },
+    extend: {
+      colors: {
+        'pastel-yellow': '#FFFBC1',
+        'pastel-pink': '#F7A4A4',
+        'pastel-rose': '#FD8A8A'
+      },
     }
   },
   plugins: [require('daisyui')],

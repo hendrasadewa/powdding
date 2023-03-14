@@ -31,7 +31,7 @@ const FormSelect = ({
   disabled
 }: Props) => (
   <div className='flex flex-col mt-3 mx-2'>
-    <label htmlFor={`input-${name}`} className='mb-2'>
+    <label htmlFor={`input-${name}`} className='mb-2 text-sm font-semibold'>
       {label}
       {required && <sup className='text-red-400'>*</sup>}
     </label>
@@ -44,7 +44,7 @@ const FormSelect = ({
       size={size}
       value={value}
       disabled={disabled}
-      className="border-0 active:border-0 h-10"
+      className="border-0 active:border-0 h-10 text-sm"
     >
       {!!items && !!items.length && items?.map((item : any) => (
         <Select.Option key={item?.label} value={item?.value}>{item?.label}</Select.Option>

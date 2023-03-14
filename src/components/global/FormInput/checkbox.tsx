@@ -36,13 +36,13 @@ const FormCheckbox = ({
       name={name}
       dataTheme={dataTheme}
       onChange={onChange}
-      size={size}
+      size={size || 'xs'}
       value={value}
       disabled={disabled}
       color={color}
-      className="rounded-full"
+      className="rounded-full w-5 h-5"
     />
-    <label htmlFor={`input-${name}`} className='ml-3'>
+    <label htmlFor={`input-${name}`} className='ml-3 text-sm font-semibold'>
       {label}
       {required && <sup className='text-red-400'>*</sup>}
     </label>

@@ -50,7 +50,7 @@ const SingleImageInput = ({
 
   return (
     <div className='flex flex-col mt-3 mx-2'>
-      <label htmlFor={`input-${name}`}>{label}</label>
+      <label htmlFor={`input-${name}`} className='text-sm font-semibold'>{label}</label>
       <div className="group flex flex-col relative w-52 h-52 shadow-sm m-2 bg-white rounded-lg">
         <Image
           className="rounded-lg object-cover overflow-hidden"

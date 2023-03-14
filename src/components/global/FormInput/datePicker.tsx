@@ -27,12 +27,12 @@ const SingleDatePicker = ({
   type,
 }: Props) => (
   <div className='flex flex-col mt-3 mx-2'>
-    <label htmlFor={`input-${name}`}>
+    <label htmlFor={`input-${name}`} className='text-sm font-semibold'>
       {label}
       {required && <sup style={{ color: 'red' }}>*</sup>}
     </label>
     <DatePicker 
-      className='block w-full border-solid border-1 h-10 rounded-lg p-4 hover:cursor-pointer' 
+      className='block w-full border-solid border-1 h-10 rounded-lg p-4 hover:cursor-pointer text-sm' 
       selected={value} 
       onChange={onChange} 
       disabled={disabled} 
