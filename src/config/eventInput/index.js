@@ -54,7 +54,7 @@ const EventInput = [
       name: "event_address",
       label: "Alamat",
       placeholder: "Masukkan alamat acara",
-      formType: "textInput",
+      formType: "textArea",
       required: true,
     },
     {
